@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare - Dashboard</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f8fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f766e, #06b6d4);
+            color: white;
+            padding: 55px 7%;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        nav {
+            background: white;
+            padding: 16px 7%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #374151;
+            margin-right: 25px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #0f766e;
+        }
+
+        main {
+            padding: 45px 7%;
+        }
+
+        .intro {
+            margin-bottom: 30px;
+        }
+
+        .intro h2 {
+            font-size: 32px;
+        }
+
+        .intro p {
+            color: #6b7280;
+            margin-top: 8px;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            text-decoration: none;
+            color: #1f2937;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+        }
+
+        .icon {
+            font-size: 38px;
+            margin-bottom: 18px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #0f766e;
+        }
+
+        .card p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+            background: #0f172a;
+            color: #cbd5e1;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 32px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>MediCare</h1>
+    <p>Hospital Appointment Management System</p>
+</header>
+
+<nav>
+    <a href="index.html">Dashboard</a>
+    <a href="patients.html">Patients</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="appointments.html">Appointments</a>
+    <a href="history.html">History</a>
+</nav>
+
+<main>
+
+    <div class="intro">
+        <h2>Welcome to MediCare</h2>
+        <p>Manage patients, doctors, appointments and medical records from one place.</p>
+    </div>
+
+    <div class="dashboard">
+
+        <a href="patients.html" class="card">
+            <div class="icon">🧑‍🤝‍🧑</div>
+            <h3>Patient Registration</h3>
+            <p>Register and manage patient information.</p>
+        </a>
+
+        <a href="doctors.html" class="card">
+            <div class="icon">👨‍⚕️</div>
+            <h3>Doctor Management</h3>
+            <p>View doctors, specializations and availability.</p>
+        </a>
+
+        <a href="appointments.html" class="card">
+            <div class="icon">📅</div>
+            <h3>Appointments</h3>
+            <p>Schedule and manage patient appointments.</p>
+        </a>
+
+        <a href="history.html" class="card">
+            <div class="icon">📋</div>
+            <h3>Appointment History</h3>
+            <p>View completed, scheduled and cancelled appointments.</p>
+        </a>
+
+    </div>
+
+</main>
+
+<footer>
+    © 2026 MediCare Hospital Appointment Management System
+</footer>
+
+</body>
+</html>
