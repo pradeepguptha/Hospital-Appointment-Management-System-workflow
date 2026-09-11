@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration | MediCare</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f8fc;
+            color: #1e293b;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f766e, #0891b2);
+            color: white;
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #a7f3d0;
+        }
+
+        .header-info {
+            text-align: right;
+            font-size: 14px;
+        }
+
+        nav {
+            background: white;
+            padding: 18px 8%;
+            display: flex;
+            gap: 35px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 600;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #0891b2;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 45px auto;
+            padding: 0 25px;
+        }
+
+        .page-title {
+            margin-bottom: 30px;
+        }
+
+        .page-title h1 {
+            font-size: 34px;
+            margin-bottom: 8px;
+            color: #0f172a;
+        }
+
+        .page-title p {
+            color: #64748b;
+        }
+
+        .form-card {
+            background: white;
+            border-radius: 18px;
+            padding: 35px;
+            box-shadow: 0 10px 35px rgba(15, 23, 42, 0.08);
+        }
+
+        .form-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 14px;
+            background: #ecfeff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 27px;
+        }
+
+        .form-header h2 {
+            font-size: 22px;
+        }
+
+        .form-header p {
+            color: #64748b;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full {
+            grid-column: span 2;
+        }
+
+        label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #334155;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 13px 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 9px;
+            font-size: 15px;
+            outline: none;
+            transition: 0.2s;
+            background: #f8fafc;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #0891b2;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(8,145,178,0.12);
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .required {
+            color: #ef4444;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .btn {
+            padding: 13px 24px;
+            border-radius: 9px;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .btn-cancel {
+            background: #f1f5f9;
+            color: #475569;
+        }
+
+        .btn-register {
+            background: linear-gradient(135deg, #0f766e, #0891b2);
+            color: white;
+            box-shadow: 0 5px 15px rgba(8,145,178,0.25);
+        }
+
+        .btn-register:hover {
+            transform: translateY(-2px);
+        }
+
+        footer {
+            margin-top: 70px;
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .header-info {
+                text-align: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: span 1;
+            }
+
+            .form-card {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">✚ Medi<span>Care</span></div>
+
+    <div class="header-info">
+        <strong>Hospital Appointment Management</strong><br>
+        Patient Services Portal
+    </div>
+</header>
+
+<nav>
+    <a href="index.html">Dashboard</a>
+    <a href="patients.html" class="active">Patients</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="appointments.html">Appointments</a>
+    <a href="history.html">History</a>
+</nav>
+
+<div class="container">
+
+    <div class="page-title">
+        <h1>Patient Registration</h1>
+        <p>Create a new patient profile and maintain accurate medical records.</p>
+    </div>
+
+    <div class="form-card">
+
+        <div class="form-header">
+            <div class="icon">👤</div>
+
+            <div>
+                <h2>Patient Information</h2>
+                <p>Please enter the patient's details below.</p>
+            </div>
+        </div>
+
+        <form>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>Patient ID <span class="required">*</span></label>
+                    <input type="text" placeholder="e.g. P1001">
+                </div>
+
+                <div class="form-group">
+                    <label>Patient Name <span class="required">*</span></label>
+                    <input type="text" placeholder="Enter full name">
+                </div>
+
+                <div class="form-group">
+                    <label>Age <span class="required">*</span></label>
+                    <input type="number" placeholder="Enter age">
+                </div>
+
+                <div class="form-group">
+                    <label>Gender <span class="required">*</span></label>
+                    <select>
+                        <option>Select gender</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number <span class="required">*</span></label>
+                    <input type="tel" placeholder="+91 XXXXX XXXXX">
+                </div>
+
+                <div class="form-group">
+                    <label>Blood Group</label>
+                    <select>
+                        <option>Select blood group</option>
+                        <option>A+</option>
+                        <option>A-</option>
+                        <option>B+</option>
+                        <option>B-</option>
+                        <option>O+</option>
+                        <option>O-</option>
+                        <option>AB+</option>
+                        <option>AB-</option>
+                    </select>
+                </div>
+
+                <div class="form-group full">
+                    <label>Address</label>
+                    <textarea placeholder="Enter complete address"></textarea>
+                </div>
+
+            </div>
+
+            <div class="actions">
+                <button type="reset" class="btn btn-cancel">Clear Form</button>
+                <button type="submit" class="btn btn-register">✓ Register Patient</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 MediCare Hospital · Hospital Appointment Management System
+</footer>
+
+</body>
+</html>
